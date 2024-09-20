@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freeplay - Sonic.exe</title>
+    <link rel="stylesheet" href="styles/freeplay.css">
+</head>
+<body>
+    <div class="page-container">
+        <h1 class="title">
+            <img src="images/title.png" alt="Sonic.exe" class="title-image">
+        </h1>
+        <div class="freeplay-container">
+            <!-- Lista de canciones a la izquierda -->
+            <div class="song-list">
+                <ul>
+                    <li data-song="song1" class="song-item">
+                        <img src="images/icon1.png" alt="Canción 1" class="song-icon">
+                        <span class="song-name">Canción 1</span>
+                    </li>
+                    <li data-song="song2" class="song-item">
+                        <img src="images/icon2.png" alt="Canción 2" class="song-icon">
+                        <span class="song-name">Canción 2</span>
+                    </li>
+                    <li data-song="song3" class="song-item">
+                        <img src="images/icon3.png" alt="Canción 3" class="song-icon">
+                        <span class="song-name">Canción 3</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Visualización de la canción seleccionada a la derecha -->
+            <div class="song-display">
+                <div id="song1" class="song-info">
+                    <img src="images/song1.png" alt="Canción 1" class="song-image">
+                    <h2 class="song-title">Substantial Digitalized</h2>
+                    <a href="https://drive.google.com/drive/folders/1C3V4R1P8P_SOmUwGP7d6WbY0lHRJow1" target="_blank" class="download-link">Descargar</a>
+                </div>
+                <div id="song2" class="song-info hidden">
+                    <img src="images/song2.png" alt="Canción 2" class="song-image">
+                    <h2 class="song-title">Digital Chaos</h2>
+                    <a href="https://drive.google.com/drive/folders/1C3V4R1P8P_SOmUwGP7d6WbY0lHRJow1" target="_blank" class="download-link">Descargar</a>
+                </div>
+                <div id="song3" class="song-info hidden">
+                    <img src="images/song3.png" alt="Canción 3" class="song-image">
+                    <h2 class="song-title">Virtual Dystopia</h2>
+                    <a href="https://drive.google.com/drive/folders/1C3V4R1P8P_SOmUwGP7d6WbY0lHRJow1" target="_blank" class="download-link">Descargar</a>
+                </div>
+            </div>
+        </div>
+
+        <button id="menuBtn" class="menu-btn">Menu</button>
+
+        <a href="index.html" class="back-button">Regresar al Menú Principal</a>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="freeplayMusic" src="sounds/freeplay.ogg" loop autoplay></audio>
+
+    <script src="js/freeplay.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - Sonic.exe</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-background">
+            <h1 class="title">
+                <img src="images/350_sin_titulo_20240917203045.png" alt="Sonic.exe">
+            </h1>
+            <div class="menu-container">
+                <a href="storyMode.html" class="menu-button" id="storyMode">
+                    <img src="images/20240917_232517.png" alt="Modo Historia">
+                </a>
+                <a href="freeplay.html" class="menu-button" id="freeplay">
+                    <img src="images/20240917_232451.png" alt="Freeplay">
+                </a>
+                <a href="credits.html" class="menu-button" id="credits">
+                    <img src="images/20240917_232427.png" alt="Créditos">
+                </a>
+                <a href="extras.html" class="menu-button" id="extras">
+                    <img src="images/20240917_232358.png" alt="Extras">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Música de fondo (menu.ogg) -->
+    <audio id="backgroundMusic" src="sounds/menu.ogg" loop autoplay></audio>
+    <!-- Sonido de selección (pauseScrollMenu.ogg) -->
+    <audio id="selectSound" src="sounds/pauseScrollMenu.ogg"></audio>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
