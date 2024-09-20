@@ -1,0 +1,135 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title {
+    margin: 0;
+}
+
+.title-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.freeplay-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.song-list {
+    width: 30%;
+}
+
+.song-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.song-list li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid white;
+    margin-bottom: 10px;
+    background-color: black;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.song-list li.selected {
+    background-color: #333;
+    opacity: 1;
+}
+
+.song-list li.deselected {
+    opacity: 0.6;
+}
+
+.song-list li:hover {
+    background-color: #333;
+}
+
+.song-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.song-name {
+    font-size: 18px;
+}
+
+.song-display {
+    width: 65%;
+    text-align: center;
+}
+
+.song-info {
+    display: none;
+}
+
+.song-info img {
+    max-width: 100%;
+    height: auto;
+}
+
+.song-title {
+    margin-top: 20px;
+}
+
+.download-link {
+    display: block;
+    color: #00f;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+.menu-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-btn:hover {
+    background-color: #555;
+}
+
+@media (max-width: 600px) {
+    .freeplay-container {
+        flex-direction: column;
+    }
+    .song-list {
+        width: 100%;
+    }
+    .song-display {
+        width: 100%;
+    }
+    .controls {
+        flex-direction: column;
+    }
+    .control-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
