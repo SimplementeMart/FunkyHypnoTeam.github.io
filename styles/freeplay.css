@@ -1,135 +1,85 @@
+/* Aplicando una fuente pixelada desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive; /* Fuente de estilo pixel */
     background-color: black;
     color: white;
-    margin: 0;
-    padding: 0;
-}
-
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-}
-
-.title {
-    margin: 0;
-}
-
-.title-image {
-    max-width: 100%;
-    height: auto;
-}
-
-.freeplay-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.song-list {
-    width: 30%;
-}
-
-.song-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.song-list li {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    border: 2px solid white;
-    margin-bottom: 10px;
-    background-color: black;
-    transition: background-color 0.3s, opacity 0.3s;
-}
-
-.song-list li.selected {
-    background-color: #333;
-    opacity: 1;
-}
-
-.song-list li.deselected {
-    opacity: 0.6;
-}
-
-.song-list li:hover {
-    background-color: #333;
-}
-
-.song-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.song-name {
-    font-size: 18px;
-}
-
-.song-display {
-    width: 65%;
     text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
-.song-info {
-    display: none;
+h1 {
+    margin-bottom: 20px;
 }
 
-.song-info img {
-    max-width: 100%;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.song-box {
+    display: inline-block;
+    border: 4px solid yellow; /* Solo bordes amarillos */
+    padding: 20px;
+    width: 400px;
+    height: 250px; /* Ajuste del tamaño */
+    background-color: black; /* Fondo negro */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.song-box:hover {
+    transform: scale(1.05);
+}
+
+.mod-image {
+    width: 100%;
     height: auto;
 }
 
-.song-title {
-    margin-top: 20px;
-}
-
-.download-link {
-    display: block;
-    color: #00f;
-    text-decoration: none;
+/* Cambiar el color del título del mod a rojo al pasar el mouse */
+.mod-title {
+    color: white;
     margin-top: 10px;
+    transition: color 0.3s ease-in-out;
 }
 
-.download-link:hover {
-    text-decoration: underline;
+.song-box:hover .mod-title {
+    color: red; /* Cambia el título del mod a rojo cuando el cuadro es seleccionado */
 }
 
-.menu-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
+/* Flechas de navegación */
+.arrow {
+    font-size: 3em;
     cursor: pointer;
-    font-size: 16px;
+    color: white;
+    margin: 0 20px;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.menu-btn:hover {
-    background-color: #555;
+.arrow:hover {
+    transform: scale(1.2);
+    color: yellow;
 }
 
-@media (max-width: 600px) {
-    .freeplay-container {
-        flex-direction: column;
-    }
-    .song-list {
-        width: 100%;
-    }
-    .song-display {
-        width: 100%;
-    }
-    .controls {
-        flex-direction: column;
-    }
-    .control-btn {
-        width: 100%;
-        margin: 5px 0;
-    }
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+    text-decoration: underline;
 }

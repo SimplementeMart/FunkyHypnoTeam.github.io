@@ -1,42 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const songItems = document.querySelectorAll('.song-item');
-    const songInfos = document.querySelectorAll('.song-info');
-    const freeplayMusic = document.getElementById('freeplayMusic');
-
-    let currentIndex = 0;
-
-    function updateSelection() {
-        songInfos.forEach((info, index) => {
-            info.classList.add('hidden');
-            songItems[index].classList.remove('selected');
-            songItems[index].classList.add('deselected');
-        });
-
-        songInfos[currentIndex].classList.remove('hidden');
-        songItems[currentIndex].classList.add('selected');
-        songItems[currentIndex].classList.remove('deselected');
+// Lista de canciones con sus imágenes y enlaces a las páginas HTML correspondientes
+const songs = [
+    {
+        title: "Canción 1 - Substantial Digitalized",
+        image: "images/mod-image1.png",
+        link: "mod1.html" // Link a la página del mod 1
+    },
+    {
+        title: "Canción 2 - Another Track",
+        image: "images/mod-image2.png",
+        link: "mod2.html" // Link a la página del mod 2
+    },
+    {
+        title: "Canción 3 - Final Challenge",
+        image: "images/mod-image3.png",
+        link: "mod3.html" // Link a la página del mod 3
     }
+];
 
-    function loadSong(index) {
-        currentIndex = index;
-        updateSelection();
-    }
+let currentSongIndex = 0;
 
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + songItems.length) % songItems.length;
-        loadSong(currentIndex);
-    });
+const songDisplay = document.getElementById("songDisplay");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % songItems.length;
-        loadSong(currentIndex);
-    });
+function updateSong() {
+    // Actualizar el título y la imagen de la canción
+    songDisplay.querySelector(".mod-title").textContent = songs[currentSongIndex].title;
+    songDisplay.querySelector(".mod-image").src = songs[currentSongIndex].image;
+}
 
-    songItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            loadSong(index);
-        });
-    });
-
-    freeplayMusic.play();
+prevButton.addEventListener("click", () => {
+    // Cambiar a la canción anterior
+    currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
+    updateSong();
 });
+
+nextButton.addEventListener("click", () => {
+    // Cambiar a la siguiente canción
+    currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
+    updateSong();
+});
+
+// Redirigir al HTML correspondiente cuando se haga clic en el cuadro de la canción
+songDisplay.addEventListener("click", () => {
+    window.location.href = songs[currentSongIndex].link;
+});
+
+// Llamada inicial para mostrar la primera canción
+updateSong();
