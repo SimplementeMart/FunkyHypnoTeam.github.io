@@ -7,12 +7,12 @@ const songs = [
     },
     {
         title: "Song 2 - Left Unchecked",
-        image: "images/mod-image2.png",
+        image: "gifs/LeftUnchecked.gif",
         link: "mod2.html" // Link a la página del mod 2
     },
     {
         title: "song 3 - Lost Cause",
-        image: "images/mod-image3.png",
+        image: "gifs/LostCause.gif",
         link: "mod3.html" // Link a la página del mod 3
     }
 ];
