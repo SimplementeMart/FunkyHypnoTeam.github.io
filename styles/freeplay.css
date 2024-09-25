@@ -37,8 +37,8 @@ h1 {
 }
 
 .mod-image {
-    width: 400;
-    height: 400;
+    width: 100%;
+    height: 100%;
 }
 
 /* Cambiar el color del título del mod a rojo al pasar el mouse */
