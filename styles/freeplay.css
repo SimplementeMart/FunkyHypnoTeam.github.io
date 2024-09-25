@@ -23,7 +23,7 @@ h1 {
 
 .song-box {
     display: inline-block;
-    border: 4px solid yellow; /* Solo bordes amarillos */
+    border: 0px solid rgb(0, 0, 0); /* Solo bordes amarillos */
     padding: 20px;
     width: 400px;
     height: 250px; /* Ajuste del tamaño */
