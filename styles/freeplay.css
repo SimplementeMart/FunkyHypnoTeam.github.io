@@ -26,7 +26,7 @@ h1 {
     border: 0px solid rgb(0, 0, 0); /* Solo bordes amarillos */
     padding: 20px;
     width: 400px;
-    height: 250px; /* Ajuste del tamaño */
+    height: 320px; /* Ajuste del tamaño */
     background-color: black; /* Fondo negro */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
