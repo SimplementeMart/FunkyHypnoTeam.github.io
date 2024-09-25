@@ -1,8 +1,8 @@
 // Lista de canciones con sus imágenes y enlaces a las páginas HTML correspondientes
 const songs = [
     {
-        title: "Canción 1 - Substantial Digitalized",
-        image: "images/mod-image1.png",
+        title: "Song 1 - Safety Lullaby",
+        image: "gifs/SafetyLullaby.gif",
         link: "mod1.html" // Link a la página del mod 1
     },
     {
