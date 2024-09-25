@@ -6,12 +6,12 @@ const songs = [
         link: "mod1.html" // Link a la página del mod 1
     },
     {
-        title: "Canción 2 - Another Track",
+        title: "Song 2 - Left Unchecked",
         image: "images/mod-image2.png",
         link: "mod2.html" // Link a la página del mod 2
     },
     {
-        title: "Canción 3 - Final Challenge",
+        title: "song 3 - Lost Cause",
         image: "images/mod-image3.png",
         link: "mod3.html" // Link a la página del mod 3
     }
