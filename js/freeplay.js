@@ -41,6 +41,7 @@ function updateSong() {
     setTimeout(() => {
         newSongBox.style.transition = 'left 0.5s ease-in-out';
         newSongBox.style.left = '0'; // Desliza hacia la posición original
+        songDisplay.style.transition = 'left 0.5s ease-in-out';
         songDisplay.style.left = '-100%'; // Desliza el antiguo a la izquierda
     }, 10);
 
@@ -48,6 +49,7 @@ function updateSong() {
     setTimeout(() => {
         songDisplay.parentElement.removeChild(songDisplay); // Remover el antiguo box
         newSongBox.id = 'songDisplay'; // Actualiza el ID del nuevo box
+        newSongBox.style.left = '0'; // Asegura que el nuevo box esté visible
     }, 500); // Coincide con la duración de la animación
 }
 
