@@ -33,7 +33,6 @@ h1 {
     transition: transform 0.3s ease-in-out; /* Suaviza la animación de deslizamiento */
     cursor: pointer;
     position: absolute; /* Permite que se superponga en el contenedor */
-    left: 0; /* Asegúrate de que empiece en la posición correcta */
 }
 
 .song-box:hover {

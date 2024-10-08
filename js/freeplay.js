@@ -24,33 +24,36 @@ const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 function updateSong() {
-    const newSongBox = document.createElement('div');
-    newSongBox.classList.add('song-box');
-    
+    // Crear un nuevo elemento para la nueva canción
+    const newSongBox = document.createElement("div");
+    newSongBox.className = "song-box";
     newSongBox.innerHTML = `
-        <img src="${songs[currentSongIndex].image}" alt="Imagen del Mod" class="mod-image">
-        <p class="mod-title">${songs[currentSongIndex].title}</p>
+        <img class="mod-image" src="${songs[currentSongIndex].image}" alt="${songs[currentSongIndex].title}">
+        <div class="mod-title">${songs[currentSongIndex].title}</div>
     `;
 
-    newSongBox.style.position = 'absolute'; // Para que se deslice dentro del contenedor
-    newSongBox.style.left = '100%'; // Inicia a la derecha de la vista
+    // Agregar el nuevo elemento al DOM
+    songDisplay.appendChild(newSongBox);
 
-    songDisplay.parentElement.appendChild(newSongBox); // Añadir nuevo box
+    // Aplicar animación para deslizar
+    newSongBox.style.transform = "translateX(100%)"; // Deslizar desde la derecha
+    requestAnimationFrame(() => {
+        newSongBox.style.transition = "transform 0.5s ease";
+        newSongBox.style.transform = "translateX(0)"; // Deslizar hacia su posición original
+    });
 
-    // Deslizar hacia la izquierda
-    setTimeout(() => {
-        newSongBox.style.transition = 'left 0.5s ease-in-out';
-        newSongBox.style.left = '0'; // Desliza hacia la posición original
-        songDisplay.style.left = '-100%'; // Desliza el antiguo a la izquierda
-    }, 10);
-
-    // Espera que termine la animación y actualiza el display
-    setTimeout(() => {
-        songDisplay.parentElement.removeChild(songDisplay); // Remover el antiguo box
-        newSongBox.id = 'songDisplay'; // Actualiza el ID del nuevo box
-    }, 500); // Coincide con la duración de la animación
+    // Remover el elemento antiguo
+    const oldSongBox = songDisplay.querySelector(".song-box");
+    if (oldSongBox) {
+        oldSongBox.style.transition = "transform 0.5s ease";
+        oldSongBox.style.transform = "translateX(-100%)"; // Deslizar hacia la izquierda
+        setTimeout(() => {
+            oldSongBox.remove(); // Eliminar después de la animación
+        }, 500); // Tiempo de la transición
+    }
 }
 
+// Eventos para cambiar de canción
 prevButton.addEventListener("click", () => {
     // Cambiar a la canción anterior
     currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
