@@ -11,7 +11,7 @@ const songs = [
         link: "mod2.html" // Link a la página del mod 2
     },
     {
-        title: "Song 3 - Lost Cause",
+        title: "song 3 - Lost Cause",
         image: "gifs/LostCause.gif",
         link: "mod3.html" // Link a la página del mod 3
     }
@@ -24,36 +24,11 @@ const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 function updateSong() {
-    // Crear un nuevo elemento para la nueva canción
-    const newSongBox = document.createElement("div");
-    newSongBox.className = "song-box";
-    newSongBox.innerHTML = `
-        <img class="mod-image" src="${songs[currentSongIndex].image}" alt="${songs[currentSongIndex].title}">
-        <div class="mod-title">${songs[currentSongIndex].title}</div>
-    `;
-
-    // Agregar el nuevo elemento al DOM
-    songDisplay.appendChild(newSongBox);
-
-    // Aplicar animación para deslizar
-    newSongBox.style.transform = "translateX(100%)"; // Deslizar desde la derecha
-    requestAnimationFrame(() => {
-        newSongBox.style.transition = "transform 0.5s ease";
-        newSongBox.style.transform = "translateX(0)"; // Deslizar hacia su posición original
-    });
-
-    // Remover el elemento antiguo
-    const oldSongBox = songDisplay.querySelector(".song-box");
-    if (oldSongBox) {
-        oldSongBox.style.transition = "transform 0.5s ease";
-        oldSongBox.style.transform = "translateX(-100%)"; // Deslizar hacia la izquierda
-        setTimeout(() => {
-            oldSongBox.remove(); // Eliminar después de la animación
-        }, 500); // Tiempo de la transición
-    }
+    // Actualizar el título y la imagen de la canción
+    songDisplay.querySelector(".mod-title").textContent = songs[currentSongIndex].title;
+    songDisplay.querySelector(".mod-image").src = songs[currentSongIndex].image;
 }
 
-// Eventos para cambiar de canción
 prevButton.addEventListener("click", () => {
     // Cambiar a la canción anterior
     currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;

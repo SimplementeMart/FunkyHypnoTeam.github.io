@@ -19,8 +19,6 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    position: relative; /* Para permitir el posicionamiento absoluto de las canciones */
-    overflow: hidden; /* Oculta el contenido que se desborda */
 }
 
 .song-box {
@@ -30,9 +28,8 @@ h1 {
     width: 400px;
     height: 400px; /* Ajuste del tamaño */
     background-color: black; /* Fondo negro */
-    transition: transform 0.3s ease-in-out; /* Suaviza la animación de deslizamiento */
+    transition: transform 0.3s ease-in-out;
     cursor: pointer;
-    position: absolute; /* Permite que se superponga en el contenedor */
 }
 
 .song-box:hover {
