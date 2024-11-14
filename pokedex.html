@@ -4,30 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="stylesheet" href="pokedex.css">
+    <link rel="stylesheet" href="styles/pokedex.css">
 </head>
 <body>
     <div class="pokedex">
         <div class="info-pokemon">
-            <h2>Hypno (Safety Lullaby)</h2>
+            <h2 id="pokemon-name">Hypno (Safety Lullaby)</h2>
             <p>The Hypnosis Pokemon</p>
             <div class="imagen-pokemon">
-                <img src="path/to/hypno.png" alt="Hypno">
+                <img id="pokemon-image" src="path/to/hypno_safety_lullaby.png" alt="Hypno">
             </div>
         </div>
         
-        <div class="evolutions">
-            <p>Hypno (Safety Lullaby)</p>
-            <p>Hypno (Left Unchecked)</p>
-            <p>Hypno (Lost Cause)</p>
-            <p>???</p>
-            <p>???</p>
-            <p>???</p>
-        </div>
-
         <div class="description">
             <h3>DESCRIPTION</h3>
-            <p>This is where you can add a description of Hypno or any other details.</p>
+            <p id="pokemon-description">This is where you can add a description of Hypno or any other details.</p>
         </div>
         
         <div class="navigation">
@@ -35,6 +26,6 @@
             <button onclick="navigate('next')">➡️</button>
         </div>
     </div>
-    <script src="pokedex.js"></script>
+    <script src="js/pokedex.js"></script>
 </body>
 </html>
